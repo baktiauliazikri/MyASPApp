@@ -1,0 +1,28 @@
+@model IEnumerable<MyASPApp.Models.Trainer>
+@{
+    ViewData["Title"] = "GetAllTrainer";
+}
+
+<div class="row">
+    @Html.Raw(@ViewData["pesan"])
+    <a asp-action="Add" class="btn btn-primary btn-xs">Tambah Data Trainer</a><br />
+    <div class="col-md-8">
+        <h2>Daftar Trainer</h2>
+        <table class="table striped">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Expertise</th>
+            </tr>
+
+            @foreach (var item in @Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Expertise</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
